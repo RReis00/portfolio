@@ -13,8 +13,8 @@ const projects = [
       "Bootstrap",
       "Context API",
     ],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://vgamevault.netlify.app/",
+    githubUrl: "https://github.com/RReis00/gamevault",
   },
   {
     id: 2,
@@ -23,8 +23,8 @@ const projects = [
       "Discover music, build custom playlists, and export to Spotify.",
     image: "/projects/jammerge.JPG",
     tags: ["React", "Spotify Web API", "Authorization Code with PKCE"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://jammerge.netlify.app/",
+    githubUrl: "https://github.com/RReis00/jammming",
   },
   {
     id: 1,
