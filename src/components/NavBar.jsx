@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -16,17 +17,19 @@ export const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.screenY > 10);
+      setIsScrolled(window.scrollY > 10);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <nav
       className={cn(
         "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
+        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-sm" : "py-5"
       )}
     >
       <div className="container flex items-center justify-between">
@@ -41,7 +44,7 @@ export const NavBar = () => {
         </a>
 
         {/* desktop */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item, key) => (
             <a
               key={key}
@@ -51,6 +54,7 @@ export const NavBar = () => {
               {item.name}
             </a>
           ))}
+          <ThemeToggle />
         </div>
 
         {/* mobile */}
@@ -72,7 +76,7 @@ export const NavBar = () => {
               : "opacity-0 pointer-events-none"
           )}
         >
-          <div className="flex flex-col space-y-8 text-xl">
+          <div className="flex flex-col items-center space-y-8 text-xl">
             {navItems.map((item, key) => (
               <a
                 key={key}
@@ -83,6 +87,9 @@ export const NavBar = () => {
                 {item.name}
               </a>
             ))}
+            <div className="pt-2">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
