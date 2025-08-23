@@ -62,7 +62,7 @@ export const ContactSection = () => {
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Get In <span className="text-primary"> Touch</span>
+          Let's <span className="text-primary"> Talk</span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -77,7 +77,7 @@ export const ContactSection = () => {
               Contact Information
             </h3>
 
-            <div className="space-y-6 justify-center">
+            <div className="space-y-6 justify-center text-left">
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />{" "}

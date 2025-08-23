@@ -58,12 +58,14 @@ export const ProjectsSection = () => {
               key={key}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+              <div className="h-48 overflow-hidden p-2">
+                <a href={project.demoUrl} target="_blank">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </a>
               </div>
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
