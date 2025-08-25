@@ -33,8 +33,8 @@ const projects = [
       "Modern banking website concept showcasing clean UI and excellent design.",
     image: "/projects/velkrabank.JPG",
     tags: ["React", "TailwindCSS", "Design Showcase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://velkrabank.netlify.app/",
+    githubUrl: "https://github.com/RReis00/velkrabank",
   },
 ];
 
