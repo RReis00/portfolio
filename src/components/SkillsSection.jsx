@@ -2,27 +2,42 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const skills = [
-  // Frontend
-  { name: "HTML/CSS", level: 95, category: "frontend" },
+  { name: "HTML/CSS", level: 90, category: "frontend" },
   { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
   { name: "TypeScript", level: 90, category: "frontend" },
+  { name: "React", level: 90, category: "frontend" },
+  { name: "Redux Toolkit", level: 90, category: "frontend" },
+  { name: "React Router", level: 90, category: "frontend" },
   { name: "Tailwind CSS", level: 90, category: "frontend" },
   { name: "Bootstrap", level: 70, category: "frontend" },
+  { name: "Framer Motion", level: 70, category: "frontend" },
   { name: "Next.js", level: 50, category: "frontend" },
 
   // Backend
-  { name: "PHP", level: 40, category: "backend" },
   { name: "Node.js", level: 80, category: "backend" },
+  { name: "Express.js", level: 70, category: "backend" },
+  { name: "REST APIs", level: 80, category: "backend" },
+  { name: "OAuth / PKCE", level: 70, category: "backend" },
   { name: "MySQL", level: 40, category: "backend" },
+  { name: "MongoDB", level: 40, category: "backend" },
+  { name: "Supabase", level: 40, category: "backend" },
 
   // Tools
-  { name: "Git/GitHub", level: 95, category: "tools" },
-  { name: "Figma", level: 30, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+  { name: "Git/GitHub", level: 90, category: "tools" },
+  { name: "Netlify / Vercel", level: 80, category: "tools" },
+  { name: "VS Code", level: 90, category: "tools" },
+  { name: "Jest", level: 60, category: "tools" },
+  { name: "Cypress", level: 50, category: "tools" },
+  { name: "Figma", level: 40, category: "tools" },
+  { name: "Vite", level: 70, category: "tools" },
+
+  // Extra
+  { name: "Responsive Design", level: 90, category: "extra" },
+  { name: "Accessibility (A11Y)", level: 70, category: "extra" },
+  { name: "Agile / Scrum basics", level: 60, category: "extra" },
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
+const categories = ["all", "frontend", "backend", "tools", "extra"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
