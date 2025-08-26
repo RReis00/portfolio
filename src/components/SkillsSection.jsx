@@ -2,6 +2,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const skills = [
+  // Frontend
   { name: "HTML/CSS", level: 90, category: "frontend" },
   { name: "JavaScript", level: 90, category: "frontend" },
   { name: "TypeScript", level: 90, category: "frontend" },
@@ -9,6 +10,7 @@ const skills = [
   { name: "Redux Toolkit", level: 90, category: "frontend" },
   { name: "React Router", level: 90, category: "frontend" },
   { name: "Tailwind CSS", level: 90, category: "frontend" },
+  { name: "GSAP", level: 90, category: "frontend" },
   { name: "Bootstrap", level: 70, category: "frontend" },
   { name: "Framer Motion", level: 70, category: "frontend" },
   { name: "Next.js", level: 50, category: "frontend" },

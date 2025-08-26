@@ -40,7 +40,7 @@ const projects = [
     id: 4,
     title: "GsapProject",
     description: "Unfinished",
-    image: "/projects/velkrabank.JPG",
+    image: "/projects/gsapproject.JPG",
     tags: ["React", "TailwindCSS", "GSAP"],
     demoUrl: "https://gsapprojectt.netlify.app/",
     githubUrl: "https://github.com/RReis00/gsap-project",
