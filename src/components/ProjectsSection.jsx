@@ -27,7 +27,7 @@ const projects = [
     githubUrl: "https://github.com/RReis00/jammming",
   },
   {
-    id: 1,
+    id: 3,
     title: "VelkraBank",
     description:
       "Modern banking website concept showcasing clean UI and excellent design.",
@@ -35,6 +35,15 @@ const projects = [
     tags: ["React", "TailwindCSS", "Design Showcase"],
     demoUrl: "https://velkrabank.netlify.app/",
     githubUrl: "https://github.com/RReis00/velkrabank",
+  },
+  {
+    id: 4,
+    title: "GsapProject",
+    description: "Unfinished",
+    image: "/projects/velkrabank.JPG",
+    tags: ["React", "TailwindCSS", "GSAP"],
+    demoUrl: "https://gsapprojectt.netlify.app/",
+    githubUrl: "https://github.com/RReis00/gsap-project",
   },
 ];
 
