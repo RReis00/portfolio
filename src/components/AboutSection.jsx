@@ -1,5 +1,4 @@
 import { Briefcase, Code, User } from "lucide-react";
-import React from "react";
 
 export const AboutSection = () => {
   return (
@@ -35,7 +34,7 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href=""
+                href="../src/assets/CV_Rodrigo_R.docx"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download CV

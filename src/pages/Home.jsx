@@ -1,4 +1,3 @@
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { StarBackground } from "@/components/StarBackground";
 import { NavBar } from "@/components/NavBar";
 import { HeroSection } from "@/components/HeroSection";
