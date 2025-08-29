@@ -28,16 +28,6 @@ const projects = [
   },
   {
     id: 3,
-    title: "VelkraBank",
-    description:
-      "Modern banking website concept showcasing clean UI and excellent design.",
-    image: "/projects/velkrabank.JPG",
-    tags: ["React", "TailwindCSS", "Design Showcase"],
-    demoUrl: "https://velkrabank.netlify.app/",
-    githubUrl: "https://github.com/RReis00/velkrabank",
-  },
-  {
-    id: 4,
     title: "GsapProject",
     description: "Unfinished",
     image: "/projects/gsapproject.JPG",
