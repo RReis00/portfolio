@@ -18,6 +18,16 @@ const projects = [
   },
   {
     id: 2,
+    title: "BSK Ops",
+    description:
+      "Real life solution for a real life problem that I witnessed (Unfinished)",
+    image: "/projects/bsk-ops.JPG",
+    tags: ["React", "TailwindCSS", "TypeScript", "IndexdedDB", "Mobile first"],
+    demoUrl: "https://bsk-ops.vercel.app/",
+    githubUrl: "https://github.com/RReis00/bsk-ops",
+  },
+  {
+    id: 3,
     title: "Jammerge",
     description:
       "Discover music, build custom playlists, and export to Spotify.",
@@ -27,9 +37,9 @@ const projects = [
     githubUrl: "https://github.com/RReis00/jammming",
   },
   {
-    id: 3,
+    id: 4,
     title: "GsapProject",
-    description: "Unfinished",
+    description: "Something funny",
     image: "/projects/gsapproject.JPG",
     tags: ["React", "TailwindCSS", "GSAP"],
     demoUrl: "https://gsapprojectt.netlify.app/",
