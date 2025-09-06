@@ -31,7 +31,6 @@ const skills = [
 
   // Extra
   { name: "Responsive Design", level: 90, category: "extra" },
-  { name: "Accessibility (A11Y)", level: 70, category: "extra" },
   { name: "Agile / Scrum basics", level: 60, category: "extra" },
 ];
 
