@@ -16,7 +16,7 @@ const skills = [
   // Backend
   { name: "Node.js", level: 80, category: "backend" },
   { name: "REST APIs", level: 80, category: "backend" },
-  { name: "OAuth / PKCE", level: 70, category: "backend" },
+  
   {
     name: "MongoDB / Supabase / IndexedDB / MySQL",
     level: 40,
@@ -32,6 +32,7 @@ const skills = [
   // Extra
   { name: "Responsive Design", level: 90, category: "extra" },
   { name: "Agile / Scrum basics", level: 60, category: "extra" },
+  { name: "OAuth / PKCE", level: 70, category: "extra" },
 ];
 
 const categories = ["all", "frontend", "backend", "tools", "extra"];
