@@ -45,6 +45,24 @@ const projects = [
     demoUrl: "https://gsapprojectt.netlify.app/",
     githubUrl: "https://github.com/RReis00/gsap-project",
   },
+  {
+    id: 5,
+    title: "Photography Portfolio",
+    description: "Personal photography and videography portfolio",
+    image: "/projects/portfolio-david.JPG",
+    tags: ["React", "TailwindCSS", "TypeScript", "React Photo Album"],
+    demoUrl: "https://dbfestudio.netlify.app/",
+    githubUrl: "https://github.com/RReis00/portfolioDavid",
+  },
+  {
+    id: 6,
+    title: "Orbit",
+    description: "Real-time event & location sharing app",
+    image: "/projects/orbit-icone.JPG",
+    tags: ["React", "TailwindCSS", "TypeScript", "Leaflet"],
+    demoUrl: "https://orbit-wheat-phi.vercel.app/",
+    githubUrl: "https://github.com/RReis00/orbit",
+  },
 ];
 
 export const ProjectsSection = () => {
