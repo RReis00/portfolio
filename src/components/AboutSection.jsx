@@ -35,7 +35,7 @@ export const AboutSection = () => {
 
               <a
                 target="_blank"
-                href="/Rodrigo_Reis_CV.pdf"
+                href="/Rodrigo_Reis_CVE.pdf"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download CV
