@@ -16,10 +16,7 @@ export const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -37,32 +34,55 @@ export const NavBar = () => {
           "fixed w-full z-50 transition-all duration-300",
           isScrolled
             ? "py-3 bg-background/80 backdrop-blur-md shadow-sm"
-            : "py-5"
+            : "py-5",
         )}
       >
-        <div className="container flex items-center justify-between">
+        <div className="container relative flex items-center justify-between">
+          {/* Desktop: sem título */}
+          <div className="hidden md:flex flex-1 items-center justify-center">
+            <div className="flex items-center gap-10">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "group relative text-sm font-medium tracking-wide",
+                    "text-foreground/80 hover:text-foreground transition-colors duration-300",
+                  )}
+                >
+                  <span className="relative inline-block px-1 py-1">
+                    {item.name}
+                    {/* underline animado (nasce do centro) */}
+                    <span
+                      className={cn(
+                        "pointer-events-none absolute left-1/2 -translate-x-1/2 -bottom-1",
+                        "h-[3px] w-full rounded-full bg-primary",
+                        "origin-center scale-x-0 opacity-0",
+                        "transition-all duration-300 ease-out",
+                        "group-hover:scale-x-100 group-hover:opacity-100",
+                      )}
+                    />
+                  </span>
+                </a>
+              ))}
+
+              {/* Toggle ao lado direito do menu (mas o menu mantém-se centrado no container) */}
+              <div className="ml-2">
+                <ThemeToggle />
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile: podes manter o título (ou remover se quiseres) */}
           <a
-            className="text-xl font-bold text-primary flex items-center"
+            className="md:hidden text-xl font-bold text-primary flex items-center"
             href="#hero"
           >
             <span className="relative z-10">
-              <span className="text-glow text-foreground"> Rodrigo </span>{" "}
+              <span className="text-glow text-foreground">Rodrigo</span>{" "}
               Portfolio
             </span>
           </a>
-
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
-              >
-                {item.name}
-              </a>
-            ))}
-            <ThemeToggle />
-          </div>
 
           <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -78,7 +98,7 @@ export const NavBar = () => {
         <div
           className={cn(
             "fixed inset-0 md:hidden",
-            "z-[100] bg-background/95 backdrop-blur-md"
+            "z-[100] bg-background/95 backdrop-blur-md",
           )}
         >
           <button

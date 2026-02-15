@@ -180,6 +180,7 @@ export const HeroSection = () => {
                 before:content-[''] before:absolute before:inset-[-14%] before:rounded-full
                 before:bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.35),transparent_60%)]
                 before:blur-2xl
+                
               "
             >
               <div
