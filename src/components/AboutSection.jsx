@@ -65,8 +65,8 @@ export const AboutSection = () => {
             </p>
 
             <p className="text-muted-foreground leading-relaxed mt-3">
-              Later, I pursued Computer Engineering at university until 2024.
-              During that period, I worked on projects such as a smart home
+              Later, I pursued Computer Engineering at university
+              and uring that period, I worked on projects such as a smart home
               simulation involving sensor monitoring and actuator control, which
               strengthened my understanding of systems design and architecture.
             </p>
