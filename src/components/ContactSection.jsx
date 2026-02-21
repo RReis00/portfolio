@@ -9,9 +9,9 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import astronaut from "/astronauta-sentado.png";
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -125,18 +125,21 @@ export const ContactSection = () => {
                 <a
                   href="https://www.linkedin.com/in/rodrigo-r-836852268/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <Linkedin />
                 </a>
                 <a
                   href="https://www.instagram.com/rodrigo_reis122/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <Instagram />
                 </a>
                 <a
                   href="https://www.facebook.com/rodrigo.reis.77770"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <Facebook />
                 </a>
@@ -144,8 +147,28 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          <div className="bg-card p-8 rounded-lg shadow-xs">
-            <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
+          {/* Right card */}
+          <div className="relative bg-card p-8 rounded-lg shadow-xs overflow-visible">
+            {/* Astronaut */}
+            <img
+              src={astronaut}
+              alt="Astronaut"
+              className="
+                absolute
+                -top-45
+                md:-top-57
+                -right-15
+                w-50
+                md:w-64
+                z-20
+                pointer-events-none
+                drop-shadow-2xl
+              "
+            />
+
+            <h3 className="text-2xl font-semibold mb-6 pt-20">
+              Send a Message
+            </h3>
 
             <form className="space-y-6" onSubmit={handleSubmit} ref={formRef}>
               <input
@@ -155,6 +178,7 @@ export const ContactSection = () => {
                 autoComplete="off"
                 className="hidden"
               />
+
               <div>
                 <label
                   htmlFor="name"
@@ -212,7 +236,7 @@ export const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-2"
+                  "cosmic-button w-full flex items-center justify-center gap-2",
                 )}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

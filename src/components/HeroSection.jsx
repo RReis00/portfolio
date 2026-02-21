@@ -19,7 +19,6 @@ export const HeroSection = () => {
     const ctx = gsap.context(() => {
       if (!floatRef.current || !tiltRef.current || !imgRef.current) return;
 
-      // Entrada
       gsap.fromTo(
         floatRef.current,
         { autoAlpha: 0, y: 40, scale: 0.92, rotate: -2 },
@@ -36,7 +35,6 @@ export const HeroSection = () => {
 
       if (prefersReduced) return;
 
-      // Float contínuo (no espaço)
       gsap.to(floatRef.current, {
         y: -12,
         rotate: 1.2,
@@ -47,7 +45,6 @@ export const HeroSection = () => {
         delay: 1.6,
       });
 
-      // QUICK-TO para “arrasto” (segue o cursor e demora + ~0.5s)
       const xTo = gsap.quickTo(tiltRef.current, "x", {
         duration: 0.85,
         ease: "power3.out",
@@ -65,7 +62,6 @@ export const HeroSection = () => {
         ease: "power3.out",
       });
 
-      // Stretch (alongado) no próprio PNG
       const sxTo = gsap.quickTo(imgRef.current, "scaleX", {
         duration: 0.65,
         ease: "power3.out",
@@ -84,30 +80,25 @@ export const HeroSection = () => {
       const onMove = (e) => {
         const r = el.getBoundingClientRect();
 
-        // normalizados -0.5..0.5
         const nx = (e.clientX - r.left) / r.width - 0.5;
         const ny = (e.clientY - r.top) / r.height - 0.5;
 
-        // MAIS follow (antes tinhas 18/12 e rotação 6)
         xTo(nx * 34);
         yTo(ny * 22);
         ryTo(nx * 10);
         rxTo(-ny * 10);
 
-        // velocidade do cursor -> stretch
         const dx = e.clientX - lastX;
         const dy = e.clientY - lastY;
         lastX = e.clientX;
         lastY = e.clientY;
 
-        const v = Math.min(Math.sqrt(dx * dx + dy * dy), 50); // clamp
-        const stretch = (v / 50) * 0.1; // 0..0.10
+        const v = Math.min(Math.sqrt(dx * dx + dy * dy), 50);
+        const stretch = (v / 50) * 0.1;
 
-        // alonga no eixo do movimento (um toque “smear”)
         sxTo(1 + stretch);
         syTo(1 - stretch);
 
-        // skew subtil para “sensação de arrasto”
         skTo(nx * 6);
       };
 
@@ -142,7 +133,7 @@ export const HeroSection = () => {
     >
       <div className="container max-w-6xl mx-auto z-10">
         <div className="grid items-center gap-10 md:grid-cols-2">
-          {/* Texto */}
+          {/* Text */}
           <div className="text-center md:text-left">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
@@ -157,7 +148,7 @@ export const HeroSection = () => {
 
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto md:mx-0 opacity-0 animate-fade-in-delay-3">
                 I build modern digital experiences with a strong focus on
-                front-end development. My work centers on creating interfaces
+                web development. My work centers on creating interfaces
                 that are intuitive, visually refined, and optimized for
                 performance.
               </p>
@@ -170,7 +161,7 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Imagem */}
+          {/* Image */}
           <div className="flex justify-center md:justify-end">
             <div
               ref={floatRef}

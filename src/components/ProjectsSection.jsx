@@ -90,7 +90,8 @@ export const ProjectsSection = () => {
       const scale = 0.55 + depth * 0.45;
       const opacity = 0.15 + depth * 0.85;
 
-      const yOffset = 0;
+      const tilt = 120;
+      const yOffset = (z / r) * tilt;
 
       const isFront = depth > 0.85;
 
@@ -214,17 +215,17 @@ export const ProjectsSection = () => {
           Featured <span className="text-primary">Projects</span>
         </h2>
 
-        <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
+        <p className="text-center text-muted-foreground max-w-2xl mx-auto">
           Here you can see some of my work.
         </p>
 
         <div
           ref={wrapRef}
-          className="relative mx-auto h-[480px] md:h-[520px] select-none touch-none cursor-grab"
+          className="relative mx-auto h-[520px] md:h-[560px] select-none touch-none cursor-grab"
         >
           <div className="absolute inset-0 flex items-center justify-center [perspective:2000px]">
             <div className="relative w-full h-full [transform-style:preserve-3d]">
-              {/* Sol Central */}
+              {/* Central star */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10">
                 <div className="w-10 h-10 rounded-full bg-primary/40 blur-2xl" />
                 <div className="absolute inset-0 w-10 h-10 rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.8)_0%,transparent_70%)]" />
@@ -278,8 +279,8 @@ export const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* Controlos */}
-        <div className="flex flex-col items-center gap-6 mt-8 relative z-[5000]">
+        {/* Controls */}
+        <div className="flex flex-col items-center gap-6 mt-15 relative z-[5000]">
           <div className="flex items-center gap-4">
             <button
               type="button"

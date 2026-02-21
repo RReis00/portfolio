@@ -11,7 +11,6 @@ export const ThemeToggle = () => {
       setIsDarkMode(false);
       document.documentElement.classList.remove("dark");
     } else {
-      // default: dark
       setIsDarkMode(true);
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");

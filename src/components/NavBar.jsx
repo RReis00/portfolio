@@ -38,7 +38,6 @@ export const NavBar = () => {
         )}
       >
         <div className="container relative flex items-center justify-between">
-          {/* Desktop: sem título */}
           <div className="hidden md:flex flex-1 items-center justify-center">
             <div className="flex items-center gap-10">
               {navItems.map((item) => (
@@ -52,7 +51,6 @@ export const NavBar = () => {
                 >
                   <span className="relative inline-block px-1 py-1">
                     {item.name}
-                    {/* underline animado (nasce do centro) */}
                     <span
                       className={cn(
                         "pointer-events-none absolute left-1/2 -translate-x-1/2 -bottom-1",
@@ -66,14 +64,12 @@ export const NavBar = () => {
                 </a>
               ))}
 
-              {/* Toggle ao lado direito do menu (mas o menu mantém-se centrado no container) */}
               <div className="ml-2">
                 <ThemeToggle />
               </div>
             </div>
           </div>
 
-          {/* Mobile: podes manter o título (ou remover se quiseres) */}
           <a
             className="md:hidden text-xl font-bold text-primary flex items-center"
             href="#hero"
