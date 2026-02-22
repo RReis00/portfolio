@@ -65,9 +65,9 @@ export const AboutSection = () => {
             </p>
 
             <p className="text-muted-foreground leading-relaxed mt-3">
-              Later, I pursued Computer Engineering at university
-              and uring that period, I worked on projects such as a smart home
-              simulation involving sensor monitoring and actuator control, which
+              Later, I pursued Computer Engineering at university and uring that
+              period, I worked on projects such as a smart home simulation
+              involving sensor monitoring and actuator control, which
               strengthened my understanding of systems design and architecture.
             </p>
 
@@ -262,7 +262,7 @@ export const AboutSection = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="/Rodrigo_Reis_CVE.pdf"
+                href="/Rodrigo_Reis_CV.pdf"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download CV
