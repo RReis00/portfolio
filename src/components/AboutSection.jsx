@@ -9,13 +9,13 @@ export const AboutSection = () => {
         Icon: Leaf,
         title: "Roots & work ethic",
         preview:
-          "I started working at 14 — discipline, responsibility, and consistency shaped me early.",
+          "I started working at 14. Discipline, responsibility, and consistency shaped me early.",
         full: (
           <>
             <p className="text-muted-foreground leading-relaxed">
               I began my professional life at 14, working as a farmer in my
               uncle’s agricultural business. Every summer and school break until
-              2022, I was there — learning discipline, consistency, and
+              2022, I was there learning discipline, consistency, and
               responsibility through real work.
             </p>
             <p className="text-muted-foreground leading-relaxed mt-3">
@@ -33,8 +33,8 @@ export const AboutSection = () => {
         full: (
           <>
             <p className="text-muted-foreground leading-relaxed">
-              I am deeply curious about multiple disciplines — geopolitics,
-              politics, history, theology, economics, finance, and nutrition —
+              I am deeply curious about multiple disciplines, geopolitics,
+              politics, history, theology, economics, finance, and nutrition
               but above all, engineering, architecture, and systems development.
             </p>
             <p className="text-muted-foreground leading-relaxed mt-3">
@@ -54,7 +54,7 @@ export const AboutSection = () => {
         Icon: Rocket,
         title: "Building to solve real problems",
         preview:
-          "I design and build software to solve real problems — mine and others’.",
+          "I design and build software to solve real problems, mine and others’.",
         full: (
           <>
             <p className="text-muted-foreground leading-relaxed">
@@ -89,7 +89,7 @@ export const AboutSection = () => {
               <li>
                 A budgets and services management platform with PDF export,
                 designed to be simple, flexible, and accessible even for
-                non-technical users — currently my first product being finalized
+                non-technical users, currently my first product being finalized
                 for public release.
               </li>
             </ul>
