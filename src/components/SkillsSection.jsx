@@ -2,37 +2,37 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const skills = [
+  { name: "C# / .NET", category: "all" },
+
   // Frontend
-  { name: "HTML/CSS", level: 90, category: "frontend" },
-  { name: "JavaScript / TypeScript", level: 90, category: "frontend" },
+  { name: "HTML / CSS", category: "frontend" },
+  { name: "JavaScript / TypeScript", category: "frontend" },
   {
-    name: "React / Redux Toolkit / React Router",
-    level: 90,
+    name: "React / Redux / Zustand / React Router",
     category: "frontend",
   },
-  { name: "Next.js", level: 50, category: "frontend" },
-  { name: "Tailwind CSS / Bootstrap / GSAP", level: 80, category: "frontend" },
+  { name: "Tailwind CSS / Bootstrap", category: "frontend" },
+  { name: "GSAP / Shadcn-ui", category: "frontend" },
 
   // Backend
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "REST APIs", level: 80, category: "backend" },
-
+  { name: "Node / Express", category: "backend" },
+  { name: "REST APIs", category: "backend" },
   {
-    name: "MongoDB / Supabase / IndexedDB / MySQL",
-    level: 40,
+    name: "Supabase / IndexedDB / MySQL / PostgreSQL",
     category: "backend",
   },
 
   // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Netlify / Vercel", level: 80, category: "tools" },
-  { name: "Jest / Cypress / Mocha", level: 60, category: "tools" },
-  { name: "Vite / Webpack", level: 70, category: "tools" },
+  { name: "Git/GitHub", category: "tools" },
+  { name: "Docker", category: "tools" },
+  { name: "Netlify / Vercel", category: "tools" },
+  { name: "Jest / Cypress / Mocha", category: "tools" },
+  { name: "Vite / Webpack", category: "tools" },
 
   // Extra
-  { name: "Responsive Design", level: 90, category: "extra" },
-  { name: "Agile / Scrum basics", level: 60, category: "extra" },
-  { name: "OAuth / PKCE", level: 70, category: "extra" },
+  { name: "Teamwork", category: "extra" },
+  { name: "Good Communication", category: "extra" },
+  { name: "Agile / Scrum basics", category: "extra" },
 ];
 
 const categories = ["all", "frontend", "backend", "tools", "extra"];
@@ -41,7 +41,7 @@ export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
+    (skill) => activeCategory === "all" || skill.category === activeCategory,
   );
 
   return (
@@ -60,7 +60,7 @@ export const SkillsSection = () => {
                 "px-5 py-2 rounded-full transition-colors duration-300 capitalize cursor-pointer",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-foreground hover:bg-secondary"
+                  : "bg-secondary/70 text-foreground hover:bg-secondary",
               )}
             >
               {category}
