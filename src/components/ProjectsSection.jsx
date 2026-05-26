@@ -67,11 +67,11 @@ export const ProjectsSection = () => {
   const startXRef = useRef(0);
   const startRotRef = useRef(0);
 
-  const clampIndex = (i) => ((i % count) + count) % count;
+  const clampIndex = useCallback((i) => ((i % count) + count) % count, [count]);
 
   const getCurrentIndexFromRotation = useCallback(() => {
     return clampIndex(Math.round(-rot.current.value / step));
-  }, [step, count]);
+  }, [clampIndex, step]);
 
   const render = useCallback(() => {
     const r = radiusRef.current;
@@ -156,7 +156,7 @@ export const ProjectsSection = () => {
       const nextIdx = clampIndex(currentIdx + dir);
       goToIndex(nextIdx);
     },
-    [getCurrentIndexFromRotation, goToIndex, count],
+    [getCurrentIndexFromRotation, goToIndex, clampIndex],
   );
 
   useLayoutEffect(() => {

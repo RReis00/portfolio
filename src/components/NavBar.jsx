@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Menu, Pause, Play, Volume2, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
@@ -11,9 +11,52 @@ const navItems = [
   { name: "Contact", href: "#contact" },
 ];
 
+const AudioControls = ({
+  isPlaying,
+  onToggle,
+  volume,
+  onVolumeChange,
+  className,
+}) => {
+  return (
+    <div
+      className={cn(
+        "flex items-center gap-3 rounded-full border border-border/60 bg-background/50 px-3 py-2 backdrop-blur-sm",
+        className,
+      )}
+    >
+      <button
+        type="button"
+        onClick={onToggle}
+        className="cursor-pointer rounded-full p-1.5 text-foreground/80 transition-colors duration-300 hover:text-primary focus:outline-none"
+        aria-label={isPlaying ? "Pause music" : "Play music"}
+      >
+        {isPlaying ? <Pause size={18} /> : <Play size={18} />}
+      </button>
+
+      <Volume2 size={17} className="text-foreground/60" aria-hidden="true" />
+
+      <input
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value={volume}
+        onChange={(event) => onVolumeChange(Number(event.target.value))}
+        className="h-1.5 w-24 cursor-pointer accent-primary md:w-20 lg:w-24"
+        aria-label="Music volume"
+      />
+    </div>
+  );
+};
+
 export const NavBar = () => {
+  const audioRef = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [volume, setVolume] = useState(0.2);
+  const [autoplayFailed, setAutoplayFailed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -27,8 +70,83 @@ export const NavBar = () => {
     return () => document.documentElement.classList.remove("overflow-hidden");
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (!audio) {
+      return;
+    }
+
+    audio.volume = volume;
+  }, [volume]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (!audio) {
+      return;
+    }
+
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsPlaying(true);
+          setAutoplayFailed(false);
+        })
+        .catch(() => {
+          setIsPlaying(false);
+          setAutoplayFailed(true);
+        });
+    }
+  }, []);
+
+  const toggleAudio = async () => {
+    const audio = audioRef.current;
+
+    if (!audio) {
+      return;
+    }
+
+    if (isPlaying) {
+      audio.pause();
+      setIsPlaying(false);
+      return;
+    }
+
+    try {
+      await audio.play();
+      setIsPlaying(true);
+      setAutoplayFailed(false);
+    } catch {
+      setIsPlaying(false);
+      setAutoplayFailed(true);
+    }
+  };
+
+  const handleVolumeChange = (nextVolume) => {
+    setVolume(nextVolume);
+
+    if (audioRef.current) {
+      audioRef.current.volume = nextVolume;
+    }
+  };
+
   return (
     <>
+      <audio
+        ref={audioRef}
+        src="/theme.wav"
+        loop
+        preload="auto"
+        onPlay={() => {
+          setIsPlaying(true);
+          setAutoplayFailed(false);
+        }}
+        onPause={() => setIsPlaying(false)}
+      />
+
       <nav
         className={cn(
           "fixed w-full z-50 transition-all duration-300",
@@ -63,6 +181,17 @@ export const NavBar = () => {
                   </span>
                 </a>
               ))}
+
+              <AudioControls
+                isPlaying={isPlaying}
+                onToggle={toggleAudio}
+                volume={volume}
+                onVolumeChange={handleVolumeChange}
+                className={cn(
+                  "ml-1",
+                  autoplayFailed && "border-primary/60 shadow-sm",
+                )}
+              />
 
               <div className="ml-2">
                 <ThemeToggle />
@@ -119,6 +248,16 @@ export const NavBar = () => {
             <div className="pt-2">
               <ThemeToggle />
             </div>
+            <AudioControls
+              isPlaying={isPlaying}
+              onToggle={toggleAudio}
+              volume={volume}
+              onVolumeChange={handleVolumeChange}
+              className={cn(
+                "mt-1",
+                autoplayFailed && "border-primary/60 shadow-sm",
+              )}
+            />
           </div>
         </div>
       )}
